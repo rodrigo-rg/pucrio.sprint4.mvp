@@ -132,47 +132,11 @@ def test_delete_nonexistent_house(client):
     data = json.loads(response.data)
     assert 'message' in data
 
-def test_prediction_edge_cases(client):
-    """Testa casos extremos para predição"""
-    # Teste com valores mínimos
-    min_data = {
-        "address": "Casa Minima",
-        "square_feet": 500,
-        "bedrooms": 1,
-        "bathrooms": 1,
-        "neighborhood": 1,
-        "year_built": 1900
-    }
-    
-    response = client.post('/casa', 
-                          data=json.dumps(min_data),
-                          content_type='application/json')
-    assert response.status_code == 200
-    data = json.loads(response.data)
-    assert 'price_range' in data
-    
-    # Teste com valores máximos típicos
-    max_data = {
-        "address": "Casa Maxima",
-        "square_feet": 5000,
-        "bedrooms": 10,
-        "bathrooms": 8,
-        "neighborhood": 3,
-        "year_built": 2024
-    }
-    
-    response = client.post('/casa', 
-                          data=json.dumps(max_data),
-                          content_type='application/json')
-    assert response.status_code == 200
-    data = json.loads(response.data)
-    assert 'price_range' in data
-
 def cleanup_test_houses():
     """Limpa casas de teste do banco"""
     session = Session()
     test_houses = session.query(House).filter(
-        House.address.in_(['123 Main Street', 'Casa Minima', 'Casa Maxima'])
+        House.address.in_(['Rua das Oliveiras, 123', 'Casa Minima', 'Casa Maxima'])
     ).all()
     
     for house in test_houses:

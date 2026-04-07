@@ -8,6 +8,7 @@ import os
 
 # Importando os elementos definidos no modelo
 from model.base import Base
+from model.house import House
 
 db_path = "database/"
 # Verifica se o diretorio não existe
