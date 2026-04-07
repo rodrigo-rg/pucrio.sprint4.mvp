@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Sistema de predição de preços de imóveis</title>
+    <link rel="icon" href="img/home_logo.jpeg" type="image/png">
+</head>
+
+<body>
+     <!-- Cabeçalho de informações do sistema -->
+    <header>
+        <div class="title">
+            <h2>Bem-Vindo ao Sistema de Predição de Preços de Imóveis</h2>
+            <br>
+            <p>Este sistema foi desenvolvido para prever a faixa de preço de casas.</p>
+            <p>Para isso, basta preencher os campos abaixo com os dados da propriedade e clicar em "Prever Preço".</p>
+        </div>
+    </header>
+
+     <!-- Opções para adicionar um novo item -->
+     
+    <section class="newItem">
+        <input type="text" id="newAddress" placeholder="Endereço">
+        <input type="text" id="newSquareFeet" placeholder="Área em pés quadrados">
+        <input type="text" id="newBedrooms" placeholder="Número de Quartos">
+        <input type="text" id="newBathrooms" placeholder="Número de Banheiros">
+        <input type="text" id="newNeighborhood" placeholder="Vizinhança (1=Rural, 2=Urban, 3=Suburb)">
+        <input type="text" id="newYearBuilt" placeholder="Ano de Construção">
+        <button type="button" onclick="newItem(event)" class="addBtn">Prever Preço</button>
+    </section>    <!-- Tabela com items existentes -->
+    <section class="items">
+        <div class="table-container">
+            <table id="myTable">
+                <tr>
+                    <th>Endereço</th>
+                    <th>Área (pés quadrados)</th>
+                    <th>Quartos</th>
+                    <th>Banheiros</th>
+                    <th>Vizinhança</th>
+                    <th>Ano de Construção</th>
+                    <th>Faixa de Preço</th>
+                    <th><img src="https://cdn-icons-png.flaticon.com/512/126/126468.png" width="15" height="15"></th>
+                </tr>
+            </table>
+            <div class="legend">
+                <h3>Legenda - Faixas de Preço:</h3>
+                <ul>
+                    <li><strong>Faixa 1:</strong> entre 0 e 49.999 USD</li>
+                    <li><strong>Faixa 2:</strong> entre 50.000 e 99.999 USD</li>
+                    <li><strong>Faixa 3:</strong> entre 100.000 e 149.999 USD</li>
+                    <li><strong>Faixa 4:</strong> entre 150.000 e 199.999 USD</li>
+                    <li><strong>Faixa 5:</strong> entre 200.000 e 249.999 USD</li>
+                    <li><strong>Faixa 6:</strong> entre 250.000 e 299.999 USD</li>
+                    <li><strong>Faixa 7:</strong> entre 300.000 e 349.999 USD</li>
+                    <li><strong>Faixa 8:</strong> entre 350.000 e 399.999 USD</li>
+                    <li><strong>Faixa 9:</strong> entre 400.000 e 449.999 USD</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
+
+
